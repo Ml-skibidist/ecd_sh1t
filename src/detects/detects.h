@@ -1,11 +1,15 @@
+/* detects.h - detected parts for game */
+
 #ifndef DETECTS_H
 #define DETECTS_H
 
+// Disable warning
 #pragma warning(disable: 4996)
 
 namespace Detects
 {
-    const char* ecdMapUserDirFileNames[] = {
+    // Cs1.6 [FunGun] ECD detectable parts
+    const char* cs16_ecdMapUserDirFileNames[] = {
         "kenzoputin",                               // BlueMonday Hack
         "oxware",                                   // oxware 
         "aatasahaeadaa",                            // Alternative Hack
@@ -23,7 +27,7 @@ namespace Detects
         "psilentware.a",                            // PsilentWare
         "AltFixReload",                             // HPP Hack
     };
-    const char* ecdMapGameDirFileNames[] = {
+    const char* cs16_ecdMapGameDirFileNames[] = {
         /* Aim */
         "../123.dll",                               // AimBot [#1]
         "../SCSHv4.dll",                            // AimBot [#2]
@@ -35,7 +39,7 @@ namespace Detects
         "../mfc42d.dll",                            // AimBot [#8]
         "../msvcr100.dll",                          // AimBot [#9]
         "../msvcr90.dll",                           // AimBot [#10]
-        "aimbot.exe",                               // AimBot [#11]
+        "../cstrike/aimbot.exe",                    // AimBot [#11]
         "../cmd.dll",                               // AimBot [#13]
         "../cboby.dll",                             // AimBot [#14]
         "../BaseHook.asi",                          // AimBot [#15]
@@ -74,7 +78,7 @@ namespace Detects
         "../six.dll",                               // Aim Hack [#18]
         "../1.dll",                                 // Aim Hack [#20]
         "../alpina.dll",                            // Aim Hack [#21]
-        "keys.txt",                                 // Aim Hack [#22]
+        "../cstrike/keys.txt",                      // Aim Hack [#22]
         "../6.1.dll",                               // Aim Hack [#24]
         "../Destroy.dll",                           // Aim Hack [#25]
         "../PericoL.dll",                           // Aim Hack [#26]
@@ -124,7 +128,7 @@ namespace Detects
         "../metla.asi",                             // METLA [#3]
         "../metl.dll",                              // METLA [#4]
         "../met.dll",                               // METLA [#5]
-        "metla.dll",                                // METLA [#6]
+        "../cstrike/metla.dll",                     // METLA [#6]
         "../allcheats/Metla/metl.ini",              // METLA [#7]
 
         /* Vermillion */
@@ -139,7 +143,7 @@ namespace Detects
         "../pikovit.dll",                           // Vermillion [#9]
         "../Vermil~1.asi",                          // Vermillion [#10]
         "../sys.dll",                               // Vermillion [#11]
-        "softer.dll",                               // Vermillion [#12]
+        "../cstrike/softer.dll",                    // Vermillion [#12]
         "../quality.dll",                           // Vermillion [#13]
         "../shiza.dll",                             // Vermillion [#14]
 
@@ -156,16 +160,16 @@ namespace Detects
         "../leis10.dll",                            // Leis [#3]
         "../midimap.dll",                           // Leis [#4]
         "../leis.exe",                              // Leis [#5]
-        "leis.exe",                                 // Leis [#6]
-        "HLR Leis Release 11.exe",                  // Leis [#7]
-        "standard.ini",                             // Leis [#8]
+        "../cstrike/leis.exe",                      // Leis [#6]
+        "../cstrike/HLR Leis Release 11.exe",       // Leis [#7]
+        "../cstrike/standard.ini",                  // Leis [#8]
         "../standard.ini",                          // Leis [#9]
         "../bin/standard.ini",                      // Leis [#10]
         "../credssp.dll",                           // Leis [#11]
 
         /* BadBoy */
         "../config.dll",                            // BadBoy [#1]
-        "config.dll",                               // BadBoy [#2]
+        "../cstrike/config.dll",                    // BadBoy [#2]
         "../baa90a~1.dll",                          // BadBoy [#3]
         "../badboy~1.dll",                          // BadBoy [#4]
         "../badkiss.dll",                           // BadBoy [#5]
@@ -178,7 +182,7 @@ namespace Detects
         "../demoplayer (2).dll",                    // WALLHACK [#1]
         "../ESLWire.ini",                           // WALLHACK [#2]
         "../opengl32.dll",                          // WALLHACK [#3]
-        "DemoPlayer.cfg",                           // WALLHACK [#3]
+        "../cstrike/DemoPlayer.cfg",                // WALLHACK [#3]
         "../0000000000001.dll",                     // Opengl32 WALLHACK [#4]
         "../sswv7.0.dll",                           // [SW]WallHack [#1]
         "../SSWv6.4.dll",                           // [SSW]WallHack [#2]
@@ -207,7 +211,7 @@ namespace Detects
         "../ldr.ini",                               // MultiHack [#2]
         "../panic.ini",                             // MultiHack [#3]
         "../startup.ini",                           // MultiHack [#4]
-        "prefix.ini",                               // MultiHack [#5]
+        "../cstrike/prefix.ini",                    // MultiHack [#5]
         "../projec~1.exe",                          // MultiHack [#7]
         "../CheatL~1.exe",                          // MultiHack [#8]
         "../32345.dll",                             // MultiHack [#9]
@@ -225,7 +229,7 @@ namespace Detects
         "../fmod.dll",                              // Shadow Hack
         "../hook.dll",                              // FKN public hack
         "../litepu~1.exe",                          // LitePubHack
-        "LitePublicHack_CHEETAH_K447XJ.exe",        // LitePubHack [#1]
+        "../cstrike/LitePublicHack_CHEETAH_K447XJ.exe",// LitePubHack [#1]
         "../CSFhook.dll",                           // CSFhook
         "../tchook.dll",                            // Tchook
         "../FPTHook.dll",                           // FPTHook 2
@@ -263,16 +267,16 @@ namespace Detects
         "../smshield.asi",                          // SmShield
         "../zen0m.sys",                             // Zen0m
         "../test.dll",                              // Lightning EDGE
-        "instal~1.exe",                             // felikz process
+        "../cstrike/instal~1.exe",                  // felikz process
         "../config.exe",                            // Config Hack
         "../cheat.exe",                             // Boomenia
         "../bi0sba~1.dll",                          // Biosbase Lite
         "../sett.dll",                              // Sett
         "../1.exe",                                 // Bananit Hack
-        "BiotecK.cfg",                              // StrafeHack
-        "kyk_temp.cfg",                             // Kyk
+        "../cstrike/BiotecK.cfg",                   // StrafeHack
+        "../cstrike/kyk_temp.cfg",                  // Kyk
     };
-    const char* ecdMapPatterns[] = {
+    const char* cs16_ecdMapPatterns[] = {
         "elease\\AlterNative.pdb",
         "SERVER_INVITE_MSG",
         "FindIsGameUIActive: not",

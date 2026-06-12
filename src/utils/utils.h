@@ -1,12 +1,16 @@
+/* utils.h - using for src and e.t.c. */
+
 #ifndef UTILS_H
 #define UTILS_H
 
+// Using of this file includes
 #include <string>
 #include <ShlObj.h>
 #include <cstdlib>
 
 namespace Utils
 {
+    // Converts wchar_t -> char
     std::string WCharToChar(const wchar_t* wstr) {
         if (!wstr || lstrlenW(wstr) == 0) {
             return "";
@@ -28,12 +32,15 @@ namespace Utils
         return WCharToChar(wstr.c_str());
     }
 
+    // Getters of file paths
     std::string get_appdata_roaming_path() {
+        // Getting by SH
         char shBuffer[MAX_PATH]{};
         if (SUCCEEDED(SHGetFolderPathA(NULL, CSIDL_APPDATA, NULL, 0, shBuffer))) {
             return shBuffer;
         }
 
+        // Fallbacks
         PWSTR shKnownBuffer = nullptr;
         if (SUCCEEDED(SHGetKnownFolderPath(FOLDERID_RoamingAppData, 0, nullptr, &shKnownBuffer))) {
             std::string path = WCharToChar(shKnownBuffer);
@@ -42,6 +49,28 @@ namespace Utils
         }
 
         return "";
+    }
+    std::string get_game_path_cs16() {
+        // !!! It`s hardcoded gamepath, for use other game`s u need create new function
+        // !!! If u create new function, take ONLY with game module!
+
+        // Getting game module
+        HMODULE hlBase = GetModuleHandleA("hl.exe");
+        if (!hlBase) {
+            // Fallbacks
+            hlBase = GetModuleHandleA("hw.dll");
+            if (!hlBase) {
+                return "";
+            }
+        }
+
+        // Getting path to game module
+        char dllPath[MAX_PATH]{};
+        if (!GetModuleFileNameA(hlBase, dllPath, sizeof(dllPath))) {
+            return "";
+        }
+
+        return dllPath;
     }
 }
 
